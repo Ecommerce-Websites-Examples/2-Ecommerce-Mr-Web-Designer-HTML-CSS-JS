@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+/* variables */
+:root {
+  --blue: #2980b9;
+}
+
+/* first setting the standard css format*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.37, 1.14, 0.26, 1.24);
+}
+
+*::selection {
+  background: #ff3300;
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+/* header */
+header .header-1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  z-index: 1000;
+}
+
+header .header-1 .logo {
+  font-size: 2rem;
+  color: #666;
+}
+
+header .header-1 .logo i {
+  color: var(--blue);
+}
+
+header .header-1 .form-container form {
+  display: flex;
+}
+
+header .header-1 .form-container form .search-place {
+  height: 4rem;
+  width: 50rem;
+  outline: none;
+  border: 0.2rem solid #666;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+header .header-1 .form-container form .search-place:focus {
+  border-color: var(--blue);
+}
+
+header .header-1 .form-container form label {
+  height: 4rem;
+  width: 4rem;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 4rem;
+  cursor: pointer;
+  background: var(--blue);
+  color: #fff;
+}
+
+header .header-1 .form-container form label:hover {
+  color: yellow;
+}
+
+/* sub header / header 2 */
+header .header-2 .menu-button {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+header .header-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--blue);
+}
+
+header .header-2.header-active {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+
+header .header-2 .navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .header-2 .navbar ul li {
+  margin: 1rem;
+}
+
+header .header-2 .navbar ul li a {
+  font-size: 2rem;
+  color: #fff;
+}
+
+header .header-2 .navbar ul li a.active,
+header .header-2 .navbar ul li a:hover {
+  color: yellow;
+}
+
+header .header-2 .icons a {
+  color: #fff;
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+header .header-2 .icons a:hover {
+  color: yellow;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  header .header-1 .form-container form .search-place {
+    width: 100%;
+  }
+
+  header .header-2 .menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header .header-2 .navbar {
+    position: fixed;
+    top: -200rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+    opacity: 0;
+  }
+
+  header .header-2 .navbar ul {
+    width: 27rem;
+    padding: 4rem 0;
+    flex-flow: column;
+    background: linear-gradient(var(--blue), blueviolet);
+    border: 0.2rem solid #fff;
+    box-shadow: 0 0.3rem 0.5rem #000;
+  }
+
+  header .header-2 .navbar ul li {
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  header .header-2 .navbar ul li a {
+    font-size: 2.5rem;
+    display: block;
+  }
+
+  .fa-times {
+    transform: rotate(180deg);
+  }
+
+  header .header-2 .nav-toggle {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 400px) {
+  header .header-1 {
+    flex-flow: column;
+    padding: 1rem;
+  }
+
+  header .header-1 .logo {
+    padding-bottom: 1.5rem;
+  }
+}
